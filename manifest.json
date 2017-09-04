@@ -1,0 +1,20 @@
+{
+    "name": "Preencher campos CVC",
+    "author": "Rafael Jacomini do Carmo",
+    "version": "1.0",
+    "description": "Ajuda a preencher os campos para teste nos checkouts da CVC",
+    "manifest_version": 2,
+    "browser_action": {
+        "default_icon": "robicon.png",
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [{
+        "js": ["cvcCheckoutFiller.js"],
+        "matches": [
+            "https://novosite.cvc.com.br/passagens-aereas/checkout",
+            "https://novosite.cvc.com.br/hoteis/compra",
+            "https://novosite.cvc.com.br/monte-sua-viagem/compra*"
+        ]
+    }],
+    "web_accessible_resources": ["popup.js"]
+}
