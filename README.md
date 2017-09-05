@@ -12,3 +12,7 @@ Ajuda a preencher os campos para teste nos checkouts
 * "Carregar extensão expandida…"
 * Selecione a pasta clonada
 * Acesse as telas de checkout e `aguarde até o carregamento das formas de pagamento `
+
+```js
+   {"Authors": ['Rafael Jacomini do Carmo' , 'Daniel Misseno'], "Year": 2017, "CPR": "MIT"}
+```
