@@ -1,7 +1,7 @@
 {
     "name": "Preencher campos CVC",
     "author": "Rafael Jacomini do Carmo",
-    "version": "1.0.2",
+    "version": "1.0.8",
     "description": "Ajuda a preencher os campos para teste nos checkouts da CVC",
     "manifest_version": 2,
     "browser_action": {
@@ -11,16 +11,27 @@
     "content_scripts": [{
         "js": ["cvcCheckoutFiller.js"],
         "matches": [
-            "https://novosite.cvc.com.br/passagens-aereas/checkout",
-            "https://novosite.cvc.com.br/hoteis/compra*",
-            "https://novosite.cvc.com.br/monte-sua-viagem/compra*",
-            "http://responsivo.cvc.com.br/monte-sua-viagem/compra*",
-            "https://novosite.cvc.com.br/pacotes-turisticos/compra*",
-            "https://m.cvc.com.br/passagens-aereas/checkout",
-            "https://m.cvc.com.br/hoteis/compra*",
-            "https://m.cvc.com.br/monte-sua-viagem/compra*",
-            "https://m.cvc.com.br/pacotes-turisticos/compra*",
-			"http://rfc-5921.us-east-1.elasticbeanstalk.com/monte-sua-viagem/compra*"
+			"http://responsivo.cvc.com.br/*",
+
+            "http://*.elasticbeanstalk.com/passagens-aereas/checkout",
+            "http://*.elasticbeanstalk.com/hoteis/compra*",
+            "http://*.elasticbeanstalk.com/monte-sua-viagem/compra*",
+            "http://*.elasticbeanstalk.com/pacotes-turisticos/compra*",
+
+            "https://*.cvc.com.br/passagens-aereas/checkout",
+            "https://*.cvc.com.br/hoteis/compra*",
+            "https://*.cvc.com.br/monte-sua-viagem/compra*",
+            "https://*.cvc.com.br/pacotes-turisticos/compra*",
+            
+            "http://192.168.191.68/passagens-aereas/checkout",
+            "http://192.168.191.68/hoteis/compra*",
+            "http://192.168.191.68/monte-sua-viagem/compra*",
+            "http://192.168.191.68/pacotes-turisticos/compra*",
+
+            "http://m.cvc.com.br/passagens-aereas/checkout",
+            "http://m.cvc.com.br/hoteis/compra*",
+            "http://m.cvc.com.br/monte-sua-viagem/compra*",
+            "http://m.cvc.com.br/pacotes-turisticos/compra*"
         ]
     }],
     "web_accessible_resources": ["popup.js"]
