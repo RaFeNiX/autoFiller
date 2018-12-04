@@ -6,13 +6,17 @@
   let namespace = Ember.Application.NAMESPACES.find(n => n.__container__);
   let checkout = namespace && namespace.__container__.lookup('controller:checkout');
   let productType = checkout && checkout.appConfig.productType;
-
+  window.xys = false;
+  window.xyz = 0;
+  console.log("Iniciando");
+  
   let fillFieldsInterval = setInterval(function () {
-    console.log("Iniciado");
+    console.log("Preenchendo");
+    window.xyz++;
     if (checkout && checkout.data && checkout.model) {
-      if (checkout.data.modalities && checkout.data.modalities.length) {
+      if (checkout.data.finans.content && checkout.data.finans.content.length) {
         fillFields();
-        clearInterval(fillFieldsInterval);
+        if(window.xys || window.xyz > 20) clearInterval(fillFieldsInterval);
       }
     }
   }, 1000);
@@ -30,8 +34,8 @@
         });
       });
 
-      // _.each(checkout.data.payers, payer => {
-        Ember.setProperties(checkout.data.payer, {
+      _.each(checkout.data.payers, payer => {
+        Ember.setProperties(payer, {
           number: '546',
           cep: '08345-000',
           state: 'MG',
@@ -44,7 +48,7 @@
           phone: '11956561122',
           cpf: '09606988686'
         });     
-      // });
+      });
       
       if (checkout.data.modalities && checkout.data.modalities.length) {
         _.each(checkout.data.modalities, m => {
